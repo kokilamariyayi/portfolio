@@ -10,7 +10,7 @@ const projects = [
       'Developed a comparative sentiment analysis project using TF-IDF + Logistic Regression and RoBERTa, highlighting model performance differences on text classification tasks.',
     category: 'NLP / AI',
     tags: ['Python', 'TF-IDF', 'RoBERTa', 'NLP'],
-    link: '#',
+    link: 'https://github.com/kokilamariyayi/SENTIMENT_ANALYIS',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projects = [
       'Designed a behavior-driven fraud detection approach using anomaly detection techniques to identify deviations from normal transaction patterns.',
     category: 'Machine Learning',
     tags: ['Python', 'Anomaly Detection', 'ML', 'Data Analysis'],
-    link: '#',
+    link: 'https://github.com/kokilamariyayi/FINANCIAL_FRAUD_DETECTION-SYSTEM',
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const projects = [
       'Built an HR Analysis Dashboard using Power BI to analyze workforce metrics such as employee distribution, attrition trends, and performance indicators.',
     category: 'Data Analytics',
     tags: ['Power BI', 'Data Visualization', 'HR Analytics'],
-    link: '#',
+    link: 'https://app.powerbi.com/groups/me/reports/a9911c41-af63-4561-98a2-418653025636/5b43b69580b2c691a4c0?ctid=c0fafca5-3230-4b8a-920e-e7029dbc049c&experience=power-bi',
   },
   {
     id: 6,

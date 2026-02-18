@@ -48,12 +48,33 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    toast.success("Message sent! I'll get back to you soon.");
-    form.reset();
-    console.info('Form submitted:', data.name, data.email);
+    try {
+      const response = await fetch('https://formspree.io/f/mvzbknzl', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Message sent! I'll get back to you soon.");
+        form.reset();
+      } else {
+        toast.error(result?.errors?.[0]?.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
