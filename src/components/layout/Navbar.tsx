@@ -15,7 +15,7 @@ const navLinks = [
   { label: 'Projects', path: '/projects' },
   { label: 'Skills', path: '/skills' },
   { label: 'Resume', path: '/resume' },
-  { label: 'Blog', path: '/blog' },
+  
   { label: 'Profiles', path: '/profiles' },
   { label: 'Contact', path: '/contact' },
 ];
