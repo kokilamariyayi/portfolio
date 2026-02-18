@@ -45,9 +45,9 @@ export const Navbar = () => {
       <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
         <Link
           to="/"
-          className="text-xl font-bold font-heading text-gradient-primary"
+          className="text-lg font-bold font-heading text-foreground"
         >
-          KM
+          Kokila M
         </Link>
 
         {/* Desktop */}
