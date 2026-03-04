@@ -45,7 +45,7 @@ export const Navbar = () => {
       <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
         <Link
           to="/"
-          className="text-lg font-bold font-heading text-foreground"
+          className="text-xl font-bold font-heading bg-gradient-to-r from-[hsl(175,70%,50%)] to-[hsl(45,90%,60%)] bg-clip-text text-transparent"
         >
           KM
         </Link>
