@@ -47,7 +47,7 @@ export const Navbar = () => {
           to="/"
           className="text-lg font-bold font-heading text-foreground"
         >
-          Kokila M
+          KM
         </Link>
 
         {/* Desktop */}
