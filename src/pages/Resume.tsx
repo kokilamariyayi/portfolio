@@ -46,14 +46,14 @@ const education = [
 ];
 
 const certifications = [
-  'Google Business Intelligence — Coursera & Google (2025)',
-  'Deep Learning For Developers — Infosys (2025)',
-  'Introduction to LLMs — NPTEL (2025)',
-  'Deep Learning — NPTEL (2025)',
-  'IBM Generative AI Engineering — IBM & Coursera (2025)',
-  'Prompt Engineering — Infosys (2025)',
-  'Microsoft AI & ML Engineering — Microsoft & Google (2025)',
-  'SQL & Relational Databases — Cognizant & IBM (2024)',
+  { name: 'Google Business Intelligence', issuer: 'Coursera & Google', year: '2025', emoji: '📊', image: '/certificates/google-bi.jpg' },
+  { name: 'Deep Learning For Developers', issuer: 'Infosys', year: '2025', emoji: '🧠', image: '/certificates/deep-learning-infosys.jpg' },
+  { name: 'Introduction to LLMs', issuer: 'NPTEL', year: '2025', emoji: '🤖', image: '/certificates/llm-nptel.jpg' },
+  { name: 'Deep Learning', issuer: 'NPTEL', year: '2025', emoji: '🔬', image: '/certificates/dl-nptel.jpg' },
+  { name: 'IBM Generative AI Engineering', issuer: 'IBM & Coursera', year: '2025', emoji: '⚙️', image: '/certificates/ibm-genai.jpg' },
+  { name: 'Prompt Engineering', issuer: 'Infosys', year: '2025', emoji: '💡', image: '/certificates/prompt-eng.jpg' },
+  { name: 'Microsoft AI & ML Engineering', issuer: 'Microsoft & Google', year: '2025', emoji: '🏅', image: '/certificates/ms-ai-ml.jpg' },
+  { name: 'SQL & Relational Databases', issuer: 'Cognizant & IBM', year: '2024', emoji: '🗄️', image: '/certificates/sql-ibm.jpg' },
 ];
 
 const workshops = [
