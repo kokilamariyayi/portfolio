@@ -1,7 +1,8 @@
-import { Download, Briefcase, GraduationCap, Award, BookOpen } from 'lucide-react';
+import { Download, Briefcase, GraduationCap, Award, BookOpen, BadgeCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { PageTransition } from '@/components/PageTransition';
 import { AnimatedSection } from '@/components/AnimatedSection';
+import { FlipCertCard } from '@/components/FlipCertCard';
 import { Button } from '@/components/ui/button';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
