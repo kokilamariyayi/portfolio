@@ -12,11 +12,10 @@ function easeOut(t: number) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-const CountUp = ({ target, active }: { target: number; active: boolean }) => {
+const CountUp = ({ target }: { target: number }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!active) return;
     const duration = 1500;
     const start = performance.now();
     let raf: number;
@@ -30,28 +29,15 @@ const CountUp = ({ target, active }: { target: number; active: boolean }) => {
 
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
-  }, [active, target]);
+  }, [target]);
 
   return <>{count}</>;
 };
 
 export const StatsCounter = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
-      { threshold: 0.3 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
 
   return (
-    <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
       {stats.map((s) => (
         <div
           key={s.label}
@@ -60,7 +46,7 @@ export const StatsCounter = () => {
         >
           <s.icon className="h-5 w-5 text-primary mb-2" />
           <span className="text-[32px] font-heading font-bold leading-none">
-            <CountUp target={s.value} active={visible} />
+            <CountUp target={s.value} />
           </span>
           <span className="text-[12px] text-muted-foreground mt-1.5 tracking-wide uppercase">
             {s.label}

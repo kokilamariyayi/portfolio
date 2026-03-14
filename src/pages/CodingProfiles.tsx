@@ -26,44 +26,90 @@ const profiles = [
   {
     name: 'GitHub',
     username: '@kokilamariyayi',
-    description:
-      'Open source contributions, AI/ML projects, and experiments.',
+    description: 'Open source contributions, AI/ML projects, and experiments.',
     url: 'https://github.com/kokilamariyayi',
     icon: Github,
+    stats: '10 repos · 340+ contributions',
   },
   {
     name: 'LinkedIn',
     username: 'kokila-m-ai-ds',
-    description:
-      'Professional network, career updates, and industry connections.',
+    description: 'Professional network, career updates, and industry connections.',
     url: 'https://www.linkedin.com/in/kokila-m-ai-ds',
     icon: Linkedin,
   },
   {
     name: 'LeetCode',
-    username: 'KokilaMariyayi',
-    description:
-      'Solving DSA problems and sharpening problem-solving skills.',
+    username: '@KokilaMariyayi',
+    description: 'Solving DSA problems and sharpening problem-solving skills.',
     url: 'https://leetcode.com/u/KokilaMariyayi/',
     icon: LeetCodeIcon,
+    stats: '83 solved (Easy 55 · Med 23 · Hard 5) · Rank 1,693,778',
   },
   {
     name: 'HackerRank',
-    username: 'kokilakoki3376',   // ✅ Replace with your username
-    description:
-      'Competitive programming, skill certifications, and coding challenges.',
-    url: 'https://www.hackerrank.com/profile/kokilakoki3376',   // ✅ Replace with your profile URL
+    username: '@kokilakoki3376',
+    description: 'Competitive programming, skill certifications, and coding challenges.',
+    url: 'https://www.hackerrank.com/profile/kokilakoki3376',
     icon: HackerRankIcon,
+    stats: '32/64 Java challenges · Rank 109498 · Points 358',
   },
   {
     name: 'GeeksForGeeks',
-    username: 'KOKILA M',   // ✅ Replace with your username
-    description:
-      'DSA practice, articles, and computer science fundamentals.',
-    url: 'https://www.geeksforgeeks.org/profile/kokilakokmnu',   // ✅ Replace with your profile URL
+    username: '@kokilamariyayi',
+    description: 'DSA practice, articles, and computer science fundamentals.',
+    url: 'https://www.geeksforgeeks.org/profile/kokilakokmnu',
     icon: GeeksForGeeksIcon,
+    stats: 'Score 224 · Rank 109498 · Monthly Score 60',
   },
 ];
+
+interface BadgeData {
+  emoji: string;
+  name: string;
+  platform: string;
+  special?: boolean;
+}
+
+const badges: BadgeData[] = [
+  { emoji: '🔥', name: '50 Days Badge', platform: 'LeetCode', special: true },
+  { emoji: '⭐', name: 'Java 5-Star', platform: 'HackerRank', special: true },
+  { emoji: '🏆', name: '83 Problems Solved', platform: 'LeetCode', special: false },
+  { emoji: '📈', name: 'Max Streak 16', platform: 'LeetCode', special: true },
+  { emoji: '💻', name: '130 Submissions/yr', platform: 'LeetCode', special: false },
+  { emoji: '🎯', name: 'Score 224', platform: 'GeeksForGeeks', special: false },
+  { emoji: '🗓️', name: '78 Active Days', platform: 'LeetCode', special: false },
+  { emoji: '🚀', name: '340+ Contributions', platform: 'GitHub', special: true },
+];
+
+const BadgeCard = ({ badge, index }: { badge: BadgeData; index: number }) => {
+  const reducedMotion = useReducedMotion();
+
+  return (
+    <AnimatedSection delay={index * 0.06}>
+      <motion.div
+        whileHover={reducedMotion ? {} : { y: -4 }}
+        transition={{ duration: 0.2 }}
+        className={`flex flex-col items-center justify-center rounded-xl border px-3 py-4 text-center bg-card/80 backdrop-blur-sm transition-shadow duration-300 ${
+          badge.special
+            ? 'border-[hsl(var(--accent))]/50 hover:shadow-[0_0_16px_hsl(var(--accent)/0.25)]'
+            : 'border-border hover:border-primary/30 hover:shadow-[0_0_12px_hsl(var(--primary)/0.15)]'
+        }`}
+        style={{ minHeight: 110, maxWidth: 120, width: '100%', margin: '0 auto' }}
+      >
+        <span className="text-[24px] mb-2">{badge.emoji}</span>
+        <span
+          className={`text-[11px] font-heading font-semibold leading-tight mb-1 ${
+            badge.special ? 'text-[hsl(45,90%,60%)]' : 'text-foreground'
+          }`}
+        >
+          {badge.name}
+        </span>
+        <span className="text-[10px] text-muted-foreground">{badge.platform}</span>
+      </motion.div>
+    </AnimatedSection>
+  );
+};
 
 const CodingProfiles = () => {
   const reducedMotion = useReducedMotion();
@@ -81,7 +127,7 @@ const CodingProfiles = () => {
             </p>
           </AnimatedSection>
 
-          <div className="space-y-6">
+          <div className="space-y-6 mb-16">
             {profiles.map((profile, i) => (
               <AnimatedSection key={profile.name} delay={i * 0.12}>
                 <motion.a
@@ -109,9 +155,27 @@ const CodingProfiles = () => {
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {profile.description}
                     </p>
+                    {profile.stats && (
+                      <p className="text-[11px] text-muted-foreground/70 mt-2 font-mono">
+                        {profile.stats}
+                      </p>
+                    )}
                   </div>
                 </motion.a>
               </AnimatedSection>
+            ))}
+          </div>
+
+          {/* Badges Showcase */}
+          <AnimatedSection delay={0.3}>
+            <h2 className="text-2xl font-heading font-semibold mb-6">
+              🏅 Badges & Achievements
+            </h2>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {badges.map((badge, i) => (
+              <BadgeCard key={badge.name} badge={badge} index={i} />
             ))}
           </div>
         </div>
