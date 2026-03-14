@@ -1,5 +1,6 @@
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { AnalyticsBackground } from '@/components/AnalyticsBackground';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,12 +8,15 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => (
   <>
-    {/* Ambient gradient orbs */}
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px]" />
-      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[130px]" />
+    {/* Full-screen data analytics workspace background */}
+    <div className="fixed inset-0 -z-20">
+      <AnalyticsBackground />
     </div>
-    <div className="min-h-screen flex flex-col">
+
+    {/* Gradient mesh overlay for depth */}
+    <div className="fixed inset-0 -z-10 bg-gradient-mesh pointer-events-none" aria-hidden="true" />
+
+    <div className="min-h-screen flex flex-col relative z-0">
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
