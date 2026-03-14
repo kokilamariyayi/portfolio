@@ -4,6 +4,7 @@ import { ArrowDown, User, Code, Award, Lightbulb } from 'lucide-react';
 
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { PageTransition } from '@/components/PageTransition';
+import { StatsCounter } from '@/components/StatsCounter';
 import { Button } from '@/components/ui/button';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
