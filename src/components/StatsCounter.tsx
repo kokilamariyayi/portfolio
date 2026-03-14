@@ -35,19 +35,6 @@ const CountUp = ({ target }: { target: number }) => {
 };
 
 export const StatsCounter = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
-      { threshold: 0.3 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
 
   return (
     <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
