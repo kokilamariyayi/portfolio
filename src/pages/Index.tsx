@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowDown, User, Code, Award, Lightbulb } from 'lucide-react';
-import { AnalyticsBackground } from '@/components/AnalyticsBackground';
 
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { PageTransition } from '@/components/PageTransition';
