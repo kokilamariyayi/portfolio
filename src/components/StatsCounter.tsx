@@ -46,7 +46,7 @@ export const StatsCounter = () => {
         >
           <s.icon className="h-5 w-5 text-primary mb-2" />
           <span className="text-[32px] font-heading font-bold leading-none">
-            <CountUp target={s.value} active={visible} />
+            <CountUp target={s.value} />
           </span>
           <span className="text-[12px] text-muted-foreground mt-1.5 tracking-wide uppercase">
             {s.label}
