@@ -37,7 +37,7 @@ const CountUp = ({ target }: { target: number }) => {
 export const StatsCounter = () => {
 
   return (
-    <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
       {stats.map((s) => (
         <div
           key={s.label}
