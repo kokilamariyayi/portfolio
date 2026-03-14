@@ -4,6 +4,7 @@ import { ArrowDown, User, Code, Award, Lightbulb } from 'lucide-react';
 
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { PageTransition } from '@/components/PageTransition';
+import { StatsCounter } from '@/components/StatsCounter';
 import { Button } from '@/components/ui/button';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
@@ -136,6 +137,15 @@ const Index = () => {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-6">
+          <AnimatedSection>
+            <StatsCounter />
+          </AnimatedSection>
         </div>
       </section>
 

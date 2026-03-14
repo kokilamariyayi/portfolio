@@ -1,7 +1,8 @@
-import { Download, Briefcase, GraduationCap, Award, BookOpen } from 'lucide-react';
+import { Download, Briefcase, GraduationCap, Award, BookOpen, BadgeCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { PageTransition } from '@/components/PageTransition';
 import { AnimatedSection } from '@/components/AnimatedSection';
+import { FlipCertCard } from '@/components/FlipCertCard';
 import { Button } from '@/components/ui/button';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
@@ -45,14 +46,14 @@ const education = [
 ];
 
 const certifications = [
-  'Google Business Intelligence — Coursera & Google (2025)',
-  'Deep Learning For Developers — Infosys (2025)',
-  'Introduction to LLMs — NPTEL (2025)',
-  'Deep Learning — NPTEL (2025)',
-  'IBM Generative AI Engineering — IBM & Coursera (2025)',
-  'Prompt Engineering — Infosys (2025)',
-  'Microsoft AI & ML Engineering — Microsoft & Google (2025)',
-  'SQL & Relational Databases — Cognizant & IBM (2024)',
+  { name: 'Google Business Intelligence', issuer: 'Coursera & Google', year: '2025', emoji: '📊', image: '/certificates/google-bi.jpg' },
+  { name: 'Deep Learning For Developers', issuer: 'Infosys', year: '2025', emoji: '🧠', image: '/certificates/deep-learning-infosys.jpg' },
+  { name: 'Introduction to LLMs', issuer: 'NPTEL', year: '2025', emoji: '🤖', image: '/certificates/llm-nptel.jpg' },
+  { name: 'Deep Learning', issuer: 'NPTEL', year: '2025', emoji: '🔬', image: '/certificates/dl-nptel.jpg' },
+  { name: 'IBM Generative AI Engineering', issuer: 'IBM & Coursera', year: '2025', emoji: '⚙️', image: '/certificates/ibm-genai.jpg' },
+  { name: 'Prompt Engineering', issuer: 'Infosys', year: '2025', emoji: '💡', image: '/certificates/prompt-eng.jpg' },
+  { name: 'Microsoft AI & ML Engineering', issuer: 'Microsoft & Google', year: '2025', emoji: '🏅', image: '/certificates/ms-ai-ml.jpg' },
+  { name: 'SQL & Relational Databases', issuer: 'Cognizant & IBM', year: '2024', emoji: '🗄️', image: '/certificates/sql-ibm.jpg' },
 ];
 
 const workshops = [
@@ -188,15 +189,10 @@ const Resume = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.5}>
-            <div className="p-5 rounded-xl bg-card border border-border mb-12">
-              <ul className="space-y-2">
-                {certifications.map((cert) => (
-                  <li key={cert} className="text-muted-foreground text-sm leading-relaxed flex items-start gap-2">
-                    <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    {cert}
-                  </li>
-                ))}
-              </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center mb-12">
+              {certifications.map((cert) => (
+                <FlipCertCard key={cert.name} cert={cert} />
+              ))}
             </div>
           </AnimatedSection>
 
