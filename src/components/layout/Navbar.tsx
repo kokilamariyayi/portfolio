@@ -30,25 +30,25 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Intersection Observer for active section
+  // Scroll-based active section detection
   useEffect(() => {
-    const ids = navLinks.map((l) => l.id);
-    const observers: IntersectionObserver[] = [];
+    const handleScrollActive = () => {
+      const ids = navLinks.map((l) => l.id);
+      const scrollY = window.scrollY + window.innerHeight / 3;
 
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveId(id);
-        },
-        { rootMargin: '-40% 0px -55% 0px' }
-      );
-      observer.observe(el);
-      observers.push(observer);
-    });
+      let current = 'hero';
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) {
+          current = id;
+        }
+      }
+      setActiveId(current);
+    };
 
-    return () => observers.forEach((o) => o.disconnect());
+    window.addEventListener('scroll', handleScrollActive, { passive: true });
+    handleScrollActive();
+    return () => window.removeEventListener('scroll', handleScrollActive);
   }, []);
 
   const scrollTo = (id: string) => {
