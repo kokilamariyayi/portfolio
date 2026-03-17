@@ -5,7 +5,6 @@ import { z } from 'zod';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import {
   ArrowDown, User, Code, Award, Lightbulb,
-  Brain, Database, Wrench,
   Github, Linkedin, ExternalLink,
   Mail, MapPin, Phone, Send,
   Download, Briefcase, GraduationCap, BookOpen, BadgeCheck,
