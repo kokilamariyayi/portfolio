@@ -13,7 +13,7 @@ import { toast } from 'sonner';
 
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { PageTransition } from '@/components/PageTransition';
-import { StatsCounter } from '@/components/StatsCounter';
+import { StatsCounter, CountUp } from '@/components/StatsCounter';
 import { SkillRingCard } from '@/components/SkillRingCard';
 import { ProjectCard } from '@/components/ProjectCard';
 import { FlipCertCard } from '@/components/FlipCertCard';
@@ -142,20 +142,20 @@ const BadgeCard = ({ badge, index }: { badge: BadgeData; index: number }) => {
   return (
     <AnimatedSection delay={index * 0.06}>
       <motion.div
-        whileHover={reducedMotion ? {} : { y: -4 }}
+        whileHover={reducedMotion ? {} : { y: -6, scale: 1.05 }}
         transition={{ duration: 0.2 }}
-        className={`flex flex-col items-center justify-center rounded-xl border px-3 py-4 text-center bg-card/80 backdrop-blur-sm transition-shadow duration-300 ${
+        className={`flex flex-col items-center justify-center rounded-xl border px-4 py-6 text-center bg-card/80 backdrop-blur-sm transition-shadow duration-300 ${
           badge.special
-            ? 'border-accent/50 hover:shadow-[0_0_16px_hsl(var(--accent)/0.25)]'
-            : 'border-border hover:border-primary/30 hover:shadow-[0_0_12px_hsl(var(--primary)/0.15)]'
+            ? 'border-accent/50 hover:shadow-[0_0_20px_hsl(var(--accent)/0.3)]'
+            : 'border-border hover:border-primary/30 hover:shadow-[0_0_15px_hsl(var(--primary)/0.2)]'
         }`}
-        style={{ minHeight: 110, maxWidth: 120, width: '100%', margin: '0 auto' }}
+        style={{ minHeight: 140, maxWidth: 160, width: '100%', margin: '0 auto' }}
       >
-        <span className="text-[24px] mb-2">{badge.emoji}</span>
-        <span className={`text-[11px] font-heading font-semibold leading-tight mb-1 ${badge.special ? 'text-accent' : 'text-foreground'}`}>
+        <span className="text-[32px] mb-3">{badge.emoji}</span>
+        <span className={`text-[13px] font-heading font-semibold leading-tight mb-1.5 ${badge.special ? 'text-accent' : 'text-foreground'}`}>
           {badge.name}
         </span>
-        <span className="text-[10px] text-muted-foreground">{badge.platform}</span>
+        <span className="text-[11px] text-muted-foreground">{badge.platform}</span>
       </motion.div>
     </AnimatedSection>
   );
@@ -196,7 +196,7 @@ const ProfilePhoto = () => {
       {/* Inner dark circle + photo */}
       <div className="absolute inset-[3px] rounded-full overflow-hidden bg-card flex items-center justify-center">
         <img
-          src="/profile.jpg"
+          src="/here-photo.jpeg"
           alt="Kokila M"
           className="w-full h-full object-cover object-center"
           onError={(e) => {
@@ -336,11 +336,18 @@ const Index = () => {
                 </Button>
               </motion.div>
               {/* Mini stats row */}
-              <motion.div variants={itemVariants} className="flex gap-8 mt-10 justify-center lg:justify-start">
-                {[['6+', 'Projects'], ['3', 'Internships'], ['8', 'Certifications']].map(([num, label]) => (
-                  <div key={label} className="text-center lg:text-left">
-                    <div className="text-2xl font-heading font-bold text-gradient-primary">{num}</div>
-                    <div className="text-xs text-muted-foreground">{label}</div>
+              <motion.div variants={itemVariants} className="grid grid-cols-2 sm:flex gap-6 md:gap-8 mt-8 justify-center lg:justify-start">
+                {[
+                  { target: 8, label: 'Projects' },
+                  { target: 3, label: 'Internships' },
+                  { target: 8, label: 'Certifications' },
+                  { target: 4, label: 'Workshops' }
+                ].map((s) => (
+                  <div key={s.label} className="text-center lg:text-left min-w-[80px]">
+                    <div className="text-2xl md:text-3xl font-heading font-bold text-gradient-primary">
+                      <CountUp target={s.target} start={true} />+
+                    </div>
+                    <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">{s.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -367,7 +374,7 @@ const Index = () => {
 
 
       {/* ═══ ABOUT ═══ */}
-      <section id="about" className="py-24 md:py-32 scroll-mt-20">
+      <section id="about" className="py-16 md:py-20 scroll-mt-20">
         <div className="container mx-auto px-6">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">The Story</h2>
@@ -376,9 +383,9 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {storyItems.map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 0.1}>
-                <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors duration-300">
-                  <item.icon className="h-8 w-8 text-primary mb-4" />
-                  <h3 className="text-lg font-heading font-semibold mb-2">{item.title}</h3>
+                <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary/40 hover:shadow-[0_0_15px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-all duration-300">
+                  <item.icon className="h-8 w-8 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-lg font-heading font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </div>
               </AnimatedSection>
@@ -388,7 +395,7 @@ const Index = () => {
       </section>
 
       {/* ═══ SKILLS ═══ */}
-      <section id="skills" className="py-24 md:py-32 scroll-mt-20">
+      <section id="skills" className="py-16 md:py-20 scroll-mt-20">
         <div className="container mx-auto px-6">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Skills</h2>
@@ -403,7 +410,7 @@ const Index = () => {
       </section>
 
       {/* ═══ PROJECTS ═══ */}
-      <section id="projects" className="py-24 md:py-32 scroll-mt-20">
+      <section id="projects" className="py-16 md:py-20 scroll-mt-20">
         <div className="container mx-auto px-6">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Projects</h2>
@@ -418,7 +425,7 @@ const Index = () => {
       </section>
 
       {/* ═══ CODING PROFILES ═══ */}
-      <section id="profiles" className="py-24 md:py-32 scroll-mt-20">
+      <section id="profiles" className="py-16 md:py-20 scroll-mt-20">
         <div className="container mx-auto px-6 max-w-3xl">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Profiles</h2>
@@ -449,7 +456,7 @@ const Index = () => {
       </section>
 
       {/* ═══ BADGES ═══ */}
-      <section id="badges" className="py-24 md:py-32 scroll-mt-20">
+      <section id="badges" className="py-16 md:py-20 scroll-mt-20">
         <div className="container mx-auto px-6 max-w-3xl">
           <AnimatedSection>
             <h2 className="text-2xl md:text-3xl font-heading font-semibold mb-6">🏅 Badges & Achievements</h2>
@@ -461,7 +468,7 @@ const Index = () => {
       </section>
 
       {/* ═══ RESUME / CERTIFICATES ═══ */}
-      <section id="resume" className="py-24 md:py-32 scroll-mt-20">
+      <section id="resume" className="py-16 md:py-20 scroll-mt-20">
         <div className="container mx-auto px-6 max-w-3xl">
           <AnimatedSection>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12">
@@ -545,17 +552,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══ STATS ═══ */}
-      <section id="stats" className="py-16 md:py-24 scroll-mt-20">
-        <div className="container mx-auto px-6">
-          <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-8">By The Numbers</h2>
-          </AnimatedSection>
-          <AnimatedSection>
-            <StatsCounter />
-          </AnimatedSection>
-        </div>
-      </section>
 
       {/* ═══ CONTACT ═══ */}
       <section id="contact" className="py-24 md:py-32 scroll-mt-20">
