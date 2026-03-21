@@ -10,13 +10,14 @@
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card.has-flip:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
 .flip-card-face {
   position: absolute;
   inset: 0;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 

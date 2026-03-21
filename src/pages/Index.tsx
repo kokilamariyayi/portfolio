@@ -53,12 +53,12 @@ const skills = [
 ];
 
 const projects = [
-  { id: 1, title: 'Social Media Sentiment Analysis', description: 'Developed a comparative sentiment analysis project using TF-IDF + Logistic Regression and RoBERTa.', category: 'NLP / AI', tags: ['Python', 'TF-IDF', 'RoBERTa', 'NLP'], link: 'https://github.com/kokilamariyayi/SENTIMENT_ANALYIS' },
-  { id: 2, title: 'AI Powered Financial Fraud Detection', description: 'Designed a behavior-driven fraud detection approach using anomaly detection techniques.', category: 'Machine Learning', tags: ['Python', 'Anomaly Detection', 'ML', 'Data Analysis'], link: 'https://github.com/kokilamariyayi/FINANCIAL_FRAUD_DETECTION-SYSTEM' },
-  { id: 3, title: 'Voice Controlled Assistant For Elderly Care', description: 'Developed an AI-based voice assistant using Python, NLP, and IoT to support elderly care.', category: 'AI / IoT', tags: ['Python', 'NLP', 'IoT', 'Speech Recognition'], link: '#' },
-  { id: 4, title: 'AI Expense Forecasting Tool', description: 'Built an AI-based Expense Forecasting Tool using Python with a chatbot module.', category: 'AI / Finance', tags: ['Python', 'AI', 'Chatbot', 'Forecasting'], link: '#' },
-  { id: 5, title: 'HR Analysis Dashboard', description: 'Built an HR Analysis Dashboard using Power BI to analyze workforce metrics.', category: 'Data Analytics', tags: ['Power BI', 'Data Visualization', 'HR Analytics'], link: 'https://app.powerbi.com/groups/me/reports/a9911c41-af63-4561-98a2-418653025636/5b43b69580b2c691a4c0?ctid=c0fafca5-3230-4b8a-920e-e7029dbc049c&experience=power-bi' },
-  { id: 6, title: 'Cloud-Based ML Prediction System', description: 'Built a cloud-based ML Prediction system using IBM AutoAI.', category: 'Cloud / ML', tags: ['IBM AutoAI', 'Cloud', 'ML', 'AutoML'], link: '#' },
+  { id: 1, title: 'VidyaPath - AI Career Chatbot', description: 'AI-powered multilingual career guidance chatbot built with Groq LLaMA 3.3 and FastAPI.', category: 'AI / Chatbot', tags: ['Python', 'LLM', 'FastAPI', 'Groq'], link: 'https://github.com/kokilamariyayi/vidhyapath' },
+  { id: 2, title: 'Construction Safety AI', description: 'Real-time AI safety monitoring using YOLOv8 for construction site surveillance.', category: 'Computer Vision', tags: ['Python', 'YOLOv8', 'OpenCV', 'AI'], link: 'https://github.com/kokilamariyayi/construction-safety-ai' },
+  { id: 3, title: 'Vehicle Damage Detection AI', description: 'AI-powered damage detection and repair cost estimation using YOLOv8 and EfficientNet.', category: 'Computer Vision', tags: ['Python', 'YOLOv8', 'EfficientNet', 'AI'], link: 'https://github.com/kokilamariyayi/vehicle-damage-ai' },
+  { id: 4, title: 'Social Media Sentiment Analysis', description: 'Developed a comparative sentiment analysis project using TF-IDF + Logistic Regression and RoBERTa.', category: 'NLP / AI', tags: ['Python', 'TF-IDF', 'RoBERTa', 'NLP'], link: 'https://github.com/kokilamariyayi/SENTIMENT_ANALYIS' },
+  { id: 5, title: 'AI Powered Financial Fraud Detection', description: 'Designed a behavior-driven fraud detection approach using anomaly detection techniques.', category: 'Machine Learning', tags: ['Python', 'Anomaly Detection', 'ML', 'Data Analysis'], link: 'https://github.com/kokilamariyayi/FINANCIAL_FRAUD_DETECTION-SYSTEM' },
+  { id: 6, title: 'HR Analysis Dashboard', description: 'Built an HR Analysis Dashboard using Power BI to analyze workforce metrics.', category: 'Data Analytics', tags: ['Power BI', 'Data Visualization', 'HR Analytics'], link: 'https://app.powerbi.com/groups/me/reports/a9911c41-af63-4561-98a2-418653025636/5b43b69580b2c691a4c0?ctid=c0fafca5-3230-4b8a-920e-e7029dbc049c&experience=power-bi' },
 ];
 
 const LeetCodeIcon = ({ className }: { className?: string }) => (
@@ -72,34 +72,42 @@ const GeeksForGeeksIcon = ({ className }: { className?: string }) => (
 );
 
 const profiles = [
-  { name: 'GitHub', username: '@kokilamariyayi', description: 'Open source contributions, AI/ML projects, and experiments.', url: 'https://github.com/kokilamariyayi', icon: Github, stats: '10 repos · 340+ contributions' },
-  { name: 'LinkedIn', username: 'kokila-m-ai-ds', description: 'Professional network, career updates, and industry connections.', url: 'https://www.linkedin.com/in/kokila-m-ai-ds', icon: Linkedin },
-  { name: 'LeetCode', username: '@KokilaMariyayi', description: 'Solving DSA problems and sharpening problem-solving skills.', url: 'https://leetcode.com/u/KokilaMariyayi/', icon: LeetCodeIcon, stats: '83 solved (Easy 55 · Med 23 · Hard 5)' },
-  { name: 'HackerRank', username: '@kokilakoki3376', description: 'Competitive programming, skill certifications, and coding challenges.', url: 'https://www.hackerrank.com/profile/kokilakoki3376', icon: HackerRankIcon, stats: '32/64 Java challenges · Points 358' },
-  { name: 'GeeksForGeeks', username: '@kokilamariyayi', description: 'DSA practice, articles, and computer science fundamentals.', url: 'https://www.geeksforgeeks.org/profile/kokilakokmnu', icon: GeeksForGeeksIcon, stats: 'Score 224 · Monthly Score 60' },
+  { name: 'GitHub', username: '@kokilamariyayi', description: 'Open source contributions, AI/ML projects, and experiments.', url: 'https://github.com/kokilamariyayi', icon: Github, stats: '14 repos · 340+ contributions' },
+  { name: 'LinkedIn', username: 'kokila-m-ai-ds', description: 'Professional network, career updates, and industry connections.', url: 'https://www.linkedin.com/in/kokila-m-ai-ds', icon: Linkedin, stats: '1,487 followers · 100+ posts' },
+  { name: 'LeetCode', username: '@KokilaMariyayi', description: 'Solving DSA problems and sharpening problem-solving skills.', url: 'https://leetcode.com/u/KokilaMariyayi/', icon: LeetCodeIcon, stats: '~90 solved · Rank 1.5M+' },
+  { name: 'HackerRank', username: '@kokilakoki3376', description: 'Competitive programming, skill certifications, and coding challenges.', url: 'https://www.hackerrank.com/profile/kokilakoki3376', icon: HackerRankIcon, stats: 'Java Gold 5-Star · Points 358' },
+  { name: 'GeeksForGeeks', username: '@kokilamariyayi', description: 'DSA practice, articles, and computer science fundamentals.', url: 'https://www.geeksforgeeks.org/user/kokilamariyayi/', icon: GeeksForGeeksIcon, stats: 'Day 28 Streak · Score 224' },
 ];
 
 interface BadgeData { emoji: string; name: string; platform: string; special?: boolean; }
 const badges: BadgeData[] = [
   { emoji: '🔥', name: '50 Days Badge', platform: 'LeetCode', special: true },
-  { emoji: '⭐', name: 'Java 5-Star', platform: 'HackerRank', special: true },
-  { emoji: '🏆', name: '83 Problems Solved', platform: 'LeetCode', special: false },
-  { emoji: '📈', name: 'Max Streak 16', platform: 'LeetCode', special: true },
+  { emoji: '⭐', name: 'Java Gold 5-Star', platform: 'HackerRank', special: true },
+  { emoji: '🏆', name: '~90 Problems Solved', platform: 'LeetCode', special: false },
+  { emoji: '📈', name: 'Max Streak 28', platform: 'GeeksForGeeks', special: true },
   { emoji: '💻', name: '130 Submissions/yr', platform: 'LeetCode', special: false },
-  { emoji: '🎯', name: 'Score 224', platform: 'GeeksForGeeks', special: false },
+  { emoji: '🎯', name: 'Rank 1.5M+', platform: 'LeetCode', special: false },
   { emoji: '🗓️', name: '78 Active Days', platform: 'LeetCode', special: false },
-  { emoji: '🚀', name: '340+ Contributions', platform: 'GitHub', special: true },
+  { emoji: '🚀', name: '1,487 Followers', platform: 'LinkedIn', special: true },
 ];
 
 const certifications = [
-  { name: 'Google Business Intelligence', issuer: 'Coursera & Google', year: '2025', emoji: '📊', image: '/certificates/google-bi.jpg' },
-  { name: 'Deep Learning For Developers', issuer: 'Infosys', year: '2025', emoji: '🧠', image: '/certificates/deep-learning-infosys.jpg' },
-  { name: 'Introduction to LLMs', issuer: 'NPTEL', year: '2025', emoji: '🤖', image: '/certificates/llm-nptel.jpg' },
-  { name: 'Deep Learning', issuer: 'NPTEL', year: '2025', emoji: '🔬', image: '/certificates/dl-nptel.jpg' },
-  { name: 'IBM Generative AI Engineering', issuer: 'IBM & Coursera', year: '2025', emoji: '⚙️', image: '/certificates/ibm-genai.jpg' },
-  { name: 'Prompt Engineering', issuer: 'Infosys', year: '2025', emoji: '💡', image: '/certificates/prompt-eng.jpg' },
-  { name: 'Microsoft AI & ML Engineering', issuer: 'Microsoft & Google', year: '2025', emoji: '🏅', image: '/certificates/ms-ai-ml.jpg' },
-  { name: 'SQL & Relational Databases', issuer: 'Cognizant & IBM', year: '2024', emoji: '🗄️', image: '/certificates/sql-ibm.jpg' },
+  { name: 'AWS Academy Graduate - Cloud Foundations', issuer: 'AWS Academy', year: '2025', emoji: '☁️' },
+  { name: 'AWS Academy Graduate - Data Engineering', issuer: 'AWS Academy', year: '2025', emoji: '📊' },
+  { name: 'Generative AI for Everyone', issuer: 'DeepLearning.AI', year: '2025', emoji: '🌟' },
+  { name: 'Google Business Intelligence', issuer: 'Coursera & Google', year: '2025', emoji: '📊', image: '/google-bi.png' },
+  { name: 'IBM Generative AI Engineering', issuer: 'IBM & Coursera', year: '2025', emoji: '⚙️', image: '/ibm-genai.png' },
+  { name: 'Microsoft AI & ML Engineering', issuer: 'Microsoft', year: '2025', emoji: '🏅', image: '/ms-ai-ml.png' },
+  { name: 'SQL & Relational Databases', issuer: 'Cognizant & IBM', year: '2024', emoji: '🗄️', image: '/sql-ibm.png' },
+  { name: 'Digital Skills: Artificial Intelligence', issuer: 'Accenture', year: '2024', emoji: '🤖', image: '/accenture-ai.png' },
+  { name: 'Data Analysis with Python', issuer: 'IBM', year: '2024', emoji: '🐍', image: '/ibm-data-analysis.png' },
+  { name: 'Python for Data Science', issuer: 'NPTEL', year: '2024', emoji: '📊', image: '/nptel-python-ds.png' },
+  { name: 'Introduction to Machine Learning', issuer: 'NPTEL', year: '2024', emoji: '🧪', image: '/nptel-ml.png' },
+  { name: 'Fundamentals of Cybersecurity', issuer: 'Zscaler', year: '2025', emoji: '🛡️', image: '/zscaler-cybersecurity.png' },
+  { name: 'Deep Learning For Developers', issuer: 'Infosys', year: '2025', emoji: '🧠' },
+  { name: 'Introduction to LLMs', issuer: 'NPTEL', year: '2025', emoji: '🤖' },
+  { name: 'Deep Learning', issuer: 'NPTEL', year: '2025', emoji: '🔬' },
+  { name: 'Prompt Engineering', issuer: 'Infosys', year: '2025', emoji: '💡' },
 ];
 
 const internships = [
@@ -196,9 +204,9 @@ const ProfilePhoto = () => {
       {/* Inner dark circle + photo */}
       <div className="absolute inset-[3px] rounded-full overflow-hidden bg-card flex items-center justify-center">
         <img
-          src="/here-photo.jpeg"
+          src="/prof.jpeg"
           alt="Kokila M"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-top"
           onError={(e) => {
             // Fallback: replace with avatar placeholder
             const t = e.currentTarget;
@@ -213,14 +221,6 @@ const ProfilePhoto = () => {
             }
           }}
         />
-      </div>
-      {/* Orbiting emerald dot */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ animation: 'orbit 8s linear infinite' }}>
-        <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(158 64% 52%)', boxShadow: '0 0 10px hsl(158 64% 52%)' }} />
-      </div>
-      {/* Second orbit — violet dot */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ animation: 'orbit-reverse 12s linear infinite' }}>
-        <div className="w-2 h-2 rounded-full" style={{ background: 'hsl(262 83% 75%)', boxShadow: '0 0 8px hsl(262 83% 65%)' }} />
       </div>
       {/* Floating skill chip */}
       <motion.div
@@ -340,7 +340,7 @@ const Index = () => {
                 {[
                   { target: 8, label: 'Projects' },
                   { target: 3, label: 'Internships' },
-                  { target: 8, label: 'Certifications' },
+                  { target: 16, label: 'Certifications' },
                   { target: 4, label: 'Workshops' }
                 ].map((s) => (
                   <div key={s.label} className="text-center lg:text-left min-w-[80px]">

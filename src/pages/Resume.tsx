@@ -46,14 +46,22 @@ const education = [
 ];
 
 const certifications = [
-  { name: 'Google Business Intelligence', issuer: 'Coursera & Google', year: '2025', emoji: '📊', image: '/certificates/google-bi.jpg' },
-  { name: 'Deep Learning For Developers', issuer: 'Infosys', year: '2025', emoji: '🧠', image: '/certificates/deep-learning-infosys.jpg' },
-  { name: 'Introduction to LLMs', issuer: 'NPTEL', year: '2025', emoji: '🤖', image: '/certificates/llm-nptel.jpg' },
-  { name: 'Deep Learning', issuer: 'NPTEL', year: '2025', emoji: '🔬', image: '/certificates/dl-nptel.jpg' },
-  { name: 'IBM Generative AI Engineering', issuer: 'IBM & Coursera', year: '2025', emoji: '⚙️', image: '/certificates/ibm-genai.jpg' },
-  { name: 'Prompt Engineering', issuer: 'Infosys', year: '2025', emoji: '💡', image: '/certificates/prompt-eng.jpg' },
-  { name: 'Microsoft AI & ML Engineering', issuer: 'Microsoft & Google', year: '2025', emoji: '🏅', image: '/certificates/ms-ai-ml.jpg' },
-  { name: 'SQL & Relational Databases', issuer: 'Cognizant & IBM', year: '2024', emoji: '🗄️', image: '/certificates/sql-ibm.jpg' },
+  { name: 'AWS Academy Graduate - Cloud Foundations', issuer: 'AWS Academy', year: '2025', emoji: '☁️' },
+  { name: 'AWS Academy Graduate - Data Engineering', issuer: 'AWS Academy', year: '2025', emoji: '📊' },
+  { name: 'Generative AI for Everyone', issuer: 'DeepLearning.AI', year: '2025', emoji: '🌟' },
+  { name: 'Google Business Intelligence', issuer: 'Coursera & Google', year: '2025', emoji: '📊', image: '/google-bi.png' },
+  { name: 'IBM Generative AI Engineering', issuer: 'IBM & Coursera', year: '2025', emoji: '⚙️', image: '/ibm-genai.png' },
+  { name: 'Microsoft AI & ML Engineering', issuer: 'Microsoft', year: '2025', emoji: '🏅', image: '/ms-ai-ml.png' },
+  { name: 'SQL & Relational Databases', issuer: 'Cognizant & IBM', year: '2024', emoji: '🗄️', image: '/sql-ibm.png' },
+  { name: 'Digital Skills: Artificial Intelligence', issuer: 'Accenture', year: '2024', emoji: '🤖', image: '/accenture-ai.png' },
+  { name: 'Data Analysis with Python', issuer: 'IBM', year: '2024', emoji: '🐍', image: '/ibm-data-analysis.png' },
+  { name: 'Python for Data Science', issuer: 'NPTEL', year: '2024', emoji: '📊', image: '/nptel-python-ds.png' },
+  { name: 'Introduction to Machine Learning', issuer: 'NPTEL', year: '2024', emoji: '🧪', image: '/nptel-ml.png' },
+  { name: 'Fundamentals of Cybersecurity', issuer: 'Zscaler', year: '2025', emoji: '🛡️', image: '/zscaler-cybersecurity.png' },
+  { name: 'Deep Learning For Developers', issuer: 'Infosys', year: '2025', emoji: '🧠' },
+  { name: 'Introduction to LLMs', issuer: 'NPTEL', year: '2025', emoji: '🤖' },
+  { name: 'Deep Learning', issuer: 'NPTEL', year: '2025', emoji: '🔬' },
+  { name: 'Prompt Engineering', issuer: 'Infosys', year: '2025', emoji: '💡' },
 ];
 
 const workshops = [
